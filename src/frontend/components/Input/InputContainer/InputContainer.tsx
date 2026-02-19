@@ -15,6 +15,8 @@ export interface InputProps {
   unit?: number;
   steer?: number;
   brakeAbsActive?: boolean;
+  lapDistPct?: number;
+  sessionTime?: number;
   settings?: InputWidgetSettings['config'];
 }
 
@@ -29,6 +31,8 @@ export const InputContainer = ({
   steer,
   unit,
   brakeAbsActive,
+  lapDistPct,
+  sessionTime,
   settings,
 }: InputProps) => {
   const displayOrder = settings?.displayOrder as InputSection[] | undefined;
@@ -42,7 +46,15 @@ export const InputContainer = ({
           <div className="flex flex-4">
             <InputTrace
               key="trace"
-              input={{ brake, throttle, clutch, brakeAbsActive, steer }}
+              input={{
+                brake,
+                throttle,
+                clutch,
+                brakeAbsActive,
+                steer,
+                lapDistPct,
+                sessionTime,
+              }}
               settings={settings?.trace}
             />
           </div>
@@ -133,6 +145,8 @@ export const InputContainer = ({
     unit,
     brakeAbsActive,
     steer,
+    lapDistPct,
+    sessionTime,
     settings,
     displayOrder,
   ]);
