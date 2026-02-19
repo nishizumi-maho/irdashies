@@ -249,6 +249,9 @@ export const defaultDashboard: DashboardLayout = {
           includeClutch: false,
           strokeWidth: 3,
           maxSamples: 400,
+          referenceOverlay: {
+            enabled: true,
+          },
         },
         bar: {
           enabled: true,
