@@ -283,9 +283,6 @@ export interface InputWidgetSettings extends BaseWidgetSettings {
       includeSteer?: boolean;
       strokeWidth?: number;
       maxSamples?: number;
-      referenceOverlay?: {
-        enabled: boolean;
-      };
     };
     bar: {
       enabled: boolean;
