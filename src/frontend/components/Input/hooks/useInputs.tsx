@@ -9,22 +9,9 @@ export const useInputs = () => {
   const unit = useTelemetryValue('DisplayUnits');
   const steer = useTelemetryValue('SteeringWheelAngle');
   const brakeAbsActive = useTelemetryValue<boolean>('BrakeABSactive');
-  const lapDistPct = useTelemetryValue('LapDistPct');
-  const sessionTime = useTelemetryValue('SessionTime');
 
   // 0=disengaged (pedal pressed) to 1=fully engaged (pedal not pressed) so we need to invert it
   const clutch = clutchRaw !== undefined ? 1 - clutchRaw : undefined;
 
-  return {
-    brake,
-    throttle,
-    clutch,
-    gear,
-    speed,
-    unit,
-    steer,
-    brakeAbsActive,
-    lapDistPct,
-    sessionTime,
-  };
+  return { brake, throttle, clutch, gear, speed, unit, steer, brakeAbsActive };
 };
